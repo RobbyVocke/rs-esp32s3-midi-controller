@@ -1,0 +1,40 @@
+# This file was automatically generated.
+
+[package]
+edition = "2021"
+name = "rs-esp32s3-midi-controller"
+version = "0.1.0"
+
+[dependencies]
+embassy-executor = { version = "0.7.0", features = ["executor-thread"] }
+embassy-futures = "0.1.1"
+embassy-sync = "0.6.2"
+embassy-time = "0.4.0"
+embassy-time-driver = "0.2.0"
+esp-backtrace = { version = "0.15.0", features = ["esp32s3", "exception-handler", "panic-handler", "println"] }
+esp-hal = { version = "0.23.1", features = ["esp32s3"] }
+esp-hal-embassy = { version = "0.6.0", features = ["esp32s3"] }
+esp-println = { version = "0.13.0", features = ["esp32s3", "log"] }
+heapless = "0.8.0"
+log = "0.4.25"
+midi-convert = "0.2.0"
+static_cell = "2.1.0"
+usb-device = "0.3.2"
+usbd-midi = "0.5.0"
+
+[[bin]]
+name = "rs-esp32s3-midi-controller"
+test = false
+bench = false
+
+[profile.dev]
+debug = true
+lto = true
+opt-level = "z"
+incremental = true
+
+[profile.release]
+debug = false
+lto = true
+opt-level = "z"
+incremental = true
